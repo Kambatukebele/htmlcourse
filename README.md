@@ -39,7 +39,7 @@ So when we name our file "index.html", we are telling the browser: Hey, this is 
 *** If you forget the .html extension, your computer won't know what to do with the file and it might just open it as plain text.
 
 ### What is HTML?
-=> HTML stands for Hyper Text Markup Language. 
+=> HTML stands for Hyper Text Markup Language. It is not a programming language
 => HTML is the standard markup language for creating Web pages
 => HTML describes the structure of a Web page
 => HTML elements are the building blocks of HTML pages
@@ -57,10 +57,13 @@ So when we name our file "index.html", we are telling the browser: Hey, this is 
     </body>
 </html>
 
+==> Copy this boilerplate and paste it in the index.html we just created, and save it with ctrl + s for windows or command + s for mac.
+
+
 ### Example Explained
-. <!DOCTYPE html> is a declaration that defines that this document is an HTML document
-. <html> is the root element of an HTML page
-. <head> is the element that contains meta information about the HTML page (ex: specify the language, SEO tags, Facebook tags, google tags, etc)
+. <!DOCTYPE html> is a declaration that defines that this document is an HTML 5 document
+. <html> is the root element of an HTML page (must have lang to specify the language)
+. <head> is the element that contains meta information about the HTML page (ex: , SEO tags, Facebook tags, google tags, etc)
 . <title> is the element that contains the title of the HTML page
 . <body> is the element that contains the main content of the HTML page, and it is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, list, etc
 . <h1> element defines a large heading
@@ -89,8 +92,6 @@ Close element => </tagname>
 
 *** So we can say that HTML is a suite of elements, that come together to build the structure of a webpage ***
 
-*** Nexted HTML element ***
-HTML element can be nested (this means that elements can contain other elements).
 
 ### Examples of some elements ###
 *** Headings ***
@@ -140,7 +141,7 @@ ex:
 *** ==> Important note: <br> tag is an empty tag, which means that it has no end tag <== ***
 
 *** HTML <pre> ***
-The HTML <pre> element defines preformattsed text.
+The HTML <pre> element defines preformatted text.
 The text inside a <pre> element is displayed in a fixed-width font(usually courier), and it preserves both paces and line breaks.
 
 Let's see an example with the <p> tag and the <pre> tag:
@@ -162,6 +163,7 @@ HTML gives us two main types of lists: Ordered and unordered lists.
 *** Unordered lists ***
 An unordered list uses the <ul> tag, and it creates a list with bullet points.
 Each item inside the list is written with an <li> tag
+===> Important note:  Nexted HTML element: HTML element can be nested (this means that elements can contain other elements). <===
 ex:
 <ul>
     <li>This is a list item</li>
@@ -194,6 +196,140 @@ and here is the content or comment you want to leave or hide
 --> THis the closing
 ex: <!--  THis is a comment -->
 *** ==> You can use comments to: 1. Explain your code 2. Leave reminders for yourself or other developers 3. Temporarily disable a piece of code without deleting it <== ***
+
+### Attributes:
+HTML attributes give extra information about an element.
+They ALWAYS go inside the opening tag, and they always follow this format: name="value" or just name
+Ex: <img src="image.jpg" alt="This is an image">
+<input type="button" placeholder="Enter your name" required>
+### ==>For the image:
+    . src is an attribute that tells the browser where the image is located
+    . alt is another attribute that describes the image--- for screen readers or if the image doesn't load
+
+As we learn what is an attributes, let explore other tag elements. 
+*** Images ***
+The <img> tag is used to display images on a web page.
+It's a self-closing tag, which means that it doesn't need an opening and closing tag.
+ex: <img src="image.jpg" alt="This is an image">
+    .src stands for source --- it tells the browser where to find the image file.
+    .alt stands for alternative text --- this shows up if the image can't load, and it's also used by screen readers.
+    You can also add extra attributes like width, height, or even style to control how the image looks on your page.
+
+===> We will see how to use external image and local image. External images are images that does not reside on your server or local machine. You will just use link and add it to the source. The internal image is the image that you add first into your local server or local computer and then reference it.
+*** HTML Links ***
+In HTML, we use the <a> tag to create links---short for anchor.
+ex: <a href="https://www.google.com">Visit google</a>
+===> The href attribute stands for hyperlink reference(You do not need to memorize it)--- it tells the browser where the link should go.
+===> The text between the tags is what the user clicks on
+So in this case, when someone clicks "Visit google" in our example, it will take them to google.com
+===> You can use links to:
+    . Navigate to other websites
+    . Link to other pages on your own website
+    . Or even jump to specific sections on the same page inside your website
+
+The <a> tag can as also a special attribute call "target". It specifies where to open the linked.
+The target attribute can have one of the following values:
+    . _self - Default. Opens the document in the same windows/tab as it was clicked
+    . _blank - Opens the document in a new window or tab
+    . _parent - Opens the document in the parent frame
+    . _top - Opens the document in the full body of the window
+Here are some examples: 
+<a href="https://www.google.com" target="_blank">Visit google</a>
+<a href="https://www.google.com" target="_parent">Visit google</a>
+<a href="https://www.google.com" target="_top">Visit google</a>
+
+The <link> tag is used to link external resources to your webpage--- not for clicking, but for connecting behind the scenes.
+ex: <link rel="stylesheet" href="style.css">
+This tells the browser: Hey, go grab that CSS file and apply the style to this page.
+===> Note that css is a styling language, we will touch a little bit that later.
+
+So what is the difference between the <a> and <link> tags?
+ . <a> is for navigation --- used always in the <body> of your HTML, visible and clickable by users
+ . <link> is for resources --- usually used inside the <head> of your HTML, used by the browser, and hidden to the user.
+
+*** HTML div ***
+The <div> tag in HTML stands for division --- and it's used to group content together.
+You can think of a <div> like an empty box that you can fill with anything: text, images, headings, buttons --- whatever you want.
+ex: 
+<div>
+  <h2>My Section</h2>
+  <p>This is a paragraph inside a div.</p>
+</div>
+why is this useful?
+    . it helps organize your layout
+    . Makes it easier to style sections of your page using CSS
+    . And let's you target specific parts of your content with JavaScript
+
+*** HTML Semantic ELements ***
+Semantic elements in HTML are tags that clearly describe their meaning --- both to the browser and to humans who reading your code.
+For example, instead of using a plain <div> for everything, you can use semantic tags like:
+
+ . <header> - for the top section of your page
+ . <nav> - for the navigation menus
+ . <main> - for the main content of your page
+ . <section> - for grouping related content
+ . <article> - for blog posts or news stories
+ . <footer> - for the bottom section of your page
+
+Ex:
+<header>
+  <h1>My Website</h1>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+</nav>
+
+<main>
+  <section>
+    <h2>Welcome!</h2>
+    <p>This is my homepage content.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Copyright 2025</p>
+</footer>
+
+Semantic elements make your code:
+ . Easier to read
+ .  Better for SEO
+ . And more accessible to screen readers
+
+In short:
+Semantic HTML gives your code structure and meaning—not just style."
+ 
+===> Important Node: Semantic elements, <header>, <nav>, <main>, <section>, <article>, <footer> are container just like the <div>, the only key difference here is that semantic elements describe the purpose of the content, both for developers (readability) and for the browser (SEO) as already stated earlier.
+
+*** HTML Block and Inline Elements ***
+In HTML, every element is either a block or an inline element. --- and understanding the difference is key to building clean websites.
+
+ # Block-level elements
+ Block-level elements take up the full width available and always start on a new line. They kind of act like big building blocks that stack on top of each other.
+    Ex:
+    <div>, <p>, <h1> to <h6>, <section>, <footer>, <header>, <article>, <nav>, <aside>, <li>, <form>, <table>, <ul>, <ol>, <pre>
+    When you use a block element, it pushes the next thing down to a new line.
+    ex: 
+    <div>First block element</div>
+    <div>Second block element</div>
+
+# Inline element
+Inline elements, on the other hand, only take up as much space as they need. They stay in line with other content, like a words in a sentence.
+    Ex:
+    <span>, <a>, <small>, <em>, <img>, <strong>, <input>, <textarea>, <select>, <button>, <label>
+    So if you use an inline tag, it won't break the flow of the text. ---it just fits right into it.
+    Ex1:
+    <span>Block element one</span>
+    <span>Block element two</span>
+    Ex2: 
+    <p>This is a <strong>Strong</strong> word inside a paragraph</p>
+    Here, <p> is block-level — it starts on a new line.
+    But <strong> is inline — it just styles part of the text within the line.
+    Knowing when to use block or inline elements helps you control how your content flows and how your layout behaves."
+
+
+
 
 
 
