@@ -328,8 +328,90 @@ Inline elements, on the other hand, only take up as much space as they need. The
     But <strong> is inline — it just styles part of the text within the line.
     Knowing when to use block or inline elements helps you control how your content flows and how your layout behaves."
 
+*** HTML Tables ***
+HTML tables are used to display data in rows and columns, kind of like a spreadsheet.
+To build a table, we use a few specific tags:
+    . <table> - defines a table, the main container --- (block element)
+    . <tr> - stands for table row --- (block element)
+    . <th> - stands for table header --- (block element)
+    . <td> - stands for table data --- (block element)
 
+Ex: 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Alice</td>
+    <td>25</td>
+  </tr>
+  <tr>
+    <td>Bob</td>
+    <td>30</td>
+  </tr>
+</table>
+This creates a table with two columns: one for names, and one for ages.
+==> Use <th> when you want the top row to be bold and centered --- it shows that it's a header.
+==> Use <td> for all your regular data cells.
+Tables are great for showing things like:
+. Price lists
+. Schedules
+. Stats and comparisons
 
+*** HTML Forms ***
+Forms in HTML are how we collect data input from users --- like names, emails, messages, or even login info.
+
+At the core, we use the the <form> tag (block element) to wrap everything. Inside it, we add different types of form controls.
+ex: 
+. <input> (inline block element) --- use for text, email, password, checkboxes, radio buttons, etc.
+. <textarea> (inline block element) --- use for longer text
+. <button> (inline block element) --- use for buttons
+. <select> (inline block element) --- use for dropdowns
+. <label> (inline block element) --- to submit/send the form data
+
+ex: 
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+
+  <button type="submit">Submit</button>
+</form>
+ . The for attribute in the <label> connects it to the input by ID,
+ . The type attribute in <input> defines what kind of data to expect (text, email, number, date, checkbox, radio, submit, button),
+ . The name attribute gives the data a label when it's sent
+
+ When the user clicks submit, the form can send their data to the server.
+
+ ----- Awesome job ----
+ Now that you have learned the essential tags, how to structure your page with semantic elements, how to use comments , and build tables and forms... plus you have seen how attributes work---
+ It's time to take things a step further.
+ Let's talk about two powerful tools in HTML:
+ "class" and "id"
+These aren't visual elements like <p> or <div>, but they helps us style and target parts of our HTML using CSS (Cascading Style Sheets) or JavaScript (Programming language use for interactivity and more).
+
+So what's the difference between "class" and "id"?
+How do they work?
+And when do we use one over the other?
+
+# "class"
+A class is like a nickname you can give to one or multiple elements.
+ex:
+<p class="highlight">This is a highlighted paragraph.</p>
+<p class="highlight">This is another highlighted paragraph.</p>
+
+Now, in your CSS, you can style all elements with that class.
+In your html create the css tag like this:
+<style>
+    .highlight {
+  color: blue;
+  font-weight: bold;
+}
+
+</style>
 
 
 
